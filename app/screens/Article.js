@@ -14,7 +14,6 @@ import moment from "moment";
 
 const Article = ({ route, navigation }) => {
   const { itemId } = route.params;
-  console.log(route);
   const { state } = useContext(AppContext);
   const { data } = state;
   const article = data.filter((item) => {

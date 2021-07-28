@@ -27,7 +27,7 @@ const NewsStack = () => {
         options={{
           title: "News",
           tabBarIcon: () => (
-            <Ionicons name="bulb-outline" size={24} color="#F2F2F7" />
+            <Ionicons name="ios-newspaper-sharp" size={24} color="#8E8E93" />
           ),
         }}
       />
@@ -35,7 +35,14 @@ const NewsStack = () => {
         name="Follow"
         component={Follow}
         options={{
-          title: "Discover",
+          title: "Following",
+          tabBarIcon: () => (
+            <Ionicons
+              name="ios-file-tray-full-sharp"
+              size={24}
+              color="#8E8E93"
+            />
+          ),
         }}
       />
       <NewsTab.Screen
@@ -43,6 +50,9 @@ const NewsStack = () => {
         component={Search}
         options={{
           title: "Search",
+          tabBarIcon: () => (
+            <Ionicons name="ios-search-sharp" size={24} color="#8E8E93" />
+          ),
         }}
       />
     </NewsTab.Navigator>

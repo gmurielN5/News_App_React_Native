@@ -8,9 +8,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-//import query from context
-// on press setquery + category
-//
 const Item = ({ item, onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.item}>
     <Text style={styles.title}>{item.title}</Text>
@@ -43,12 +40,16 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   item: {
-    height: 50,
-    width: 150,
-    backgroundColor: "white",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#F2F2F7",
   },
   title: {
-    padding: 20,
+    padding: 15,
+    margin: 5,
+    textTransform: "uppercase",
+    fontWeight: "bold",
   },
 });
 

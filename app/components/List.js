@@ -17,6 +17,7 @@ function List({ navigation, route, data, isLoading, isError }) {
         onPress={() =>
           navigation.navigate("Article", {
             itemId: item.title,
+            source: item.source.name,
           })
         }
       />

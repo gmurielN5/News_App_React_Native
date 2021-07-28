@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   Categories: {
-    height: 80,
+    height: 60,
   },
   content: {
     flex: 1,

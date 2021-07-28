@@ -34,7 +34,10 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#F2F2F7",
-    fontSize: 18,
+    fontSize: 16,
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+    fontWeight: "bold",
     position: "absolute",
     bottom: 5,
     left: 5,

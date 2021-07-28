@@ -25,6 +25,8 @@ export default function App() {
               fontSize: 20,
               color: "#F2F2F7",
             },
+            headerBackTitleVisible: false,
+            headerTintColor: "#F2F2F7",
           }}
         >
           <Stack.Screen
@@ -35,7 +37,7 @@ export default function App() {
           <Stack.Screen
             name="Article"
             component={Article}
-            options={({ route }) => ({ title: route.params.name })}
+            options={({ route }) => ({ title: route.params.source })}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -20,7 +20,6 @@ const Search = ({ navigation }) => {
   const handleQuery = (input) => {
     setQuery(input);
   };
-  console.log(query);
 
   useEffect(() => {
     if (query) {
