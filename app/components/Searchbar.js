@@ -4,11 +4,12 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
   StyleSheet,
+  TouchableHighlight,
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
-const SearchBar = ({ query, handleQuery }) => {
+const SearchBar = ({ query, handleQuery, onPress }) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -17,10 +18,15 @@ const SearchBar = ({ query, handleQuery }) => {
           placeholder="Topics & Stories..."
           placeholderTextColor="#F2F2F7"
           value={query}
-          onChangeText={(input) => handleQuery(input)}
+          // onChangeText={(input) => handleQuery(input)}
           onClear={(input) => handleQuery("")}
         />
       </View>
+      <TouchableHighlight onPress={onPress}>
+        <View style={styles.content}>
+          <Ionicons name="search" size={24} color="#8E8E93" />
+        </View>
+      </TouchableHighlight>
     </View>
   );
 };
@@ -28,13 +34,11 @@ const SearchBar = ({ query, handleQuery }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
   content: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
     height: 50,
     backgroundColor: "#1C1C1E",
     borderWidth: 0.5,
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
   searchBar: {
     flex: 1,
     padding: 5,
-    color: "#F2F2F7",
+    color: "#8E8E93",
     fontSize: 18,
   },
 });

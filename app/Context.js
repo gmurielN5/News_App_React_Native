@@ -17,6 +17,7 @@ export const AppContextProvider = ({ children }) => {
 
   useEffect(() => {
     let didCancel = false;
+
     const fetchData = () => {
       fetchApi(url, query, dispatch, didCancel);
     };

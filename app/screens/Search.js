@@ -17,22 +17,29 @@ const Search = ({ navigation }) => {
   const { state, query, setQuery, setUrl } = useContext(AppContext);
   const { isLoading, isError, data } = state;
 
-  const handleQuery = (input) => {
+  // const handleQuery = (input) => {
+  //   setQuery(input);
+  // };
+  console.log(query);
+
+  const onSubmit = (e, input) => {
+    e.preventDefault();
+    setUrl(`https://newsapi.org/v2/everything?q=`);
     setQuery(input);
   };
 
-  useEffect(() => {
-    if (query) {
-      setUrl(`https://newsapi.org/v2/everything?q=`);
-    } else {
-      setUrl(`https://newsapi.org/v2/top-headlines?country=gb`);
-    }
-  }, [query]);
+  // useEffect(() => {
+  //   if (query) {
+  //     setUrl(`https://newsapi.org/v2/everything?q=`);
+  //   } else {
+  //     setUrl(`https://newsapi.org/v2/top-headlines?country=gb`);
+  //   }
+  // }, [query]);
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.searchBar}>
-        <SearchBar query={query} handleQuery={handleQuery} />
+        <SearchBar query={query} handleQuery={handleQuery} onPress={onSubmit} />
       </View>
 
       <View style={styles.content}>
