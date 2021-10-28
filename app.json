@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "local",
-    "slug": "local",
+    "name": "newsApp",
+    "slug": "newsApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
