@@ -37,7 +37,7 @@ const Follow = ({ navigation }) => {
       title: "technology",
     },
   ];
-  const { state, query, setQuery, setUrl, url } = useContext(AppContext);
+  const { state, query, setQuery, setUrl } = useContext(AppContext);
   const { isLoading, isError, data } = state;
 
   const handleQuery = (item) => {
@@ -73,7 +73,6 @@ const Follow = ({ navigation }) => {
   );
 };
 
-//Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,

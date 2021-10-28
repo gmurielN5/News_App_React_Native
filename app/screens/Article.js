@@ -86,20 +86,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    margin: 20,
   },
   header: {
     flex: 1,
     justifyContent: "center",
     alignItems: "flex-start",
-    margin: 10,
-    padding: 10,
   },
   content_line: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    margin: 10,
-    padding: 10,
+    marginTop: 10,
   },
   button: {
     marginTop: 30,
@@ -116,30 +114,30 @@ const styles = StyleSheet.create({
   },
   h1: {
     color: "#F2F2F7",
+    fontFamily: "Inter-Black",
+    textTransform: "uppercase",
     fontSize: 20,
-    fontWeight: "900",
-    lineHeight: 28,
-    marginTop: 10,
+    fontWeight: "bold",
     marginBottom: 5,
   },
   h2: {
     color: "#F2F2F7",
+    fontFamily: "Inter-Black",
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
-    lineHeight: 24,
   },
   span: {
     color: "#8E8E93",
+    fontFamily: "Inter-Black",
   },
   p: {
     color: "#F2F2F7",
     fontSize: 16,
-    lineHeight: 24,
   },
   image: {
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 20,
+    marginBottom: 20,
   },
 });
 

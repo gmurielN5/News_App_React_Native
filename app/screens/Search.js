@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../Context";
 
 import {
@@ -9,37 +9,31 @@ import {
   Button,
   StyleSheet,
 } from "react-native";
+import { URL2 } from "@env";
 
 import List from "../components/List";
 import SearchBar from "../components/Searchbar";
 
 const Search = ({ navigation }) => {
-  const { state, query, setQuery, setUrl } = useContext(AppContext);
+  const { state, setQuery, setUrl } = useContext(AppContext);
   const { isLoading, isError, data } = state;
+  const [text, setText] = useState("");
 
-  // const handleQuery = (input) => {
-  //   setQuery(input);
-  // };
-  console.log(query);
-
-  const onSubmit = (e, input) => {
-    e.preventDefault();
-    setUrl(`https://newsapi.org/v2/everything?q=`);
-    setQuery(input);
+  const handleSearch = (input) => {
+    setText(input);
   };
 
-  // useEffect(() => {
-  //   if (query) {
-  //     setUrl(`https://newsapi.org/v2/everything?q=`);
-  //   } else {
-  //     setUrl(`https://newsapi.org/v2/top-headlines?country=gb`);
-  //   }
-  // }, [query]);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setQuery(text);
+    setUrl(URL2);
+    setText("");
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.searchBar}>
-        <SearchBar query={query} handleQuery={handleQuery} onPress={onSubmit} />
+        <SearchBar handleSearch={handleSearch} onPress={onSubmit} text={text} />
       </View>
 
       <View style={styles.content}>
@@ -54,7 +48,6 @@ const Search = ({ navigation }) => {
   );
 };
 
-// redo css
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const SearchBar = ({ query, handleQuery, onPress }) => {
+const SearchBar = ({ handleSearch, onPress, text }) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -17,9 +17,8 @@ const SearchBar = ({ query, handleQuery, onPress }) => {
           style={styles.searchBar}
           placeholder="Topics & Stories..."
           placeholderTextColor="#F2F2F7"
-          value={query}
-          // onChangeText={(input) => handleQuery(input)}
-          onClear={(input) => handleQuery("")}
+          value={text}
+          onChangeText={(input) => handleSearch(input)}
         />
       </View>
       <TouchableHighlight onPress={onPress}>
@@ -49,7 +48,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 5,
     color: "#8E8E93",
-    fontSize: 18,
+    fontSize: 14,
+    fontFamily: "Inter-Black",
   },
 });
 

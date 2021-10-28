@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     margin: 5,
     textTransform: "uppercase",
     fontWeight: "bold",
+    fontFamily: "Inter-Black",
   },
 });
 

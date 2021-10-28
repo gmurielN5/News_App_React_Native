@@ -25,7 +25,7 @@ function List({ navigation, route, data, isLoading, isError }) {
   };
   return (
     <SafeAreaView style={styles.grid}>
-      {isError && <Text style={styles.text}>Something went wrong</Text>}
+      {isError && <Text style={styles.error}>Something went wrong</Text>}
       {isLoading ? (
         <ActivityIndicator size="large" color="#8E8E93" />
       ) : (
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   error: {
-    color: "#F2F2F7",
+    fontFamily: "Inter-Black",
+    color: "red",
     fontSize: 24,
   },
 });

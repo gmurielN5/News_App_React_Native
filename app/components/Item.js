@@ -34,13 +34,15 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#F2F2F7",
-    fontSize: 16,
+    fontSize: 14,
     textTransform: "uppercase",
     letterSpacing: 0.5,
-    fontWeight: "bold",
+    fontFamily: "Inter-Black",
     position: "absolute",
-    bottom: 5,
-    left: 5,
+    bottom: 0,
+    left: 0,
+    marginBottom: 10,
+    marginLeft: 10,
   },
 });
 

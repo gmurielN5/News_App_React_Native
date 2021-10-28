@@ -19,6 +19,10 @@ const NewsStack = () => {
         style: {
           backgroundColor: "#1C1C1E", // TabBar background
         },
+        labelStyle: {
+          fontFamily: "Inter-Black",
+          textTransform: "uppercase",
+        },
       }}
     >
       <NewsTab.Screen

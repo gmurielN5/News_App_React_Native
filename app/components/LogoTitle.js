@@ -1,15 +1,22 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { View, Text, StyleSheet, Image } from "react-native";
+import { useAssets } from "expo-asset";
+import AppLoading from "expo-app-loading";
 
 export const LogoTitle = (props) => {
+  const [assets] = useAssets([require("../../assets/images/icon.png")]);
+
+  if (!assets) {
+    return <AppLoading />;
+  }
   return (
     <View style={styles.container}>
-      <View style={styles.logo}>
-        <Ionicons name="ios-earth" size={24} color="#F2F2F7" />
-      </View>
+      <Image
+        style={{ width: 50, height: 50 }}
+        source={require("../../assets/images/adaptive-icon.png")}
+      />
       <View>
-        <Text style={props.style}>{props.children}</Text>
+        <Text style={props.style}>News</Text>
       </View>
     </View>
   );
@@ -21,8 +28,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
-  },
-  logo: {
-    padding: 5,
   },
 });
