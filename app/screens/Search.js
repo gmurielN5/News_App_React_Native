@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { AppContext } from "../Context";
+import React, { useContext, useState } from "react"
+import { AppContext } from "../Context"
 
 import {
   SafeAreaView,
@@ -8,27 +8,27 @@ import {
   TextInput,
   Button,
   StyleSheet,
-} from "react-native";
-import { URL2 } from "@env";
+} from "react-native"
+import { API_URL2 } from "@env"
 
-import List from "../components/List";
-import SearchBar from "../components/Searchbar";
+import List from "../components/List"
+import SearchBar from "../components/Searchbar"
 
 const Search = ({ navigation }) => {
-  const { state, setQuery, setUrl } = useContext(AppContext);
-  const { isLoading, isError, data } = state;
-  const [text, setText] = useState("");
+  const { state, setQuery, setUrl } = useContext(AppContext)
+  const { isLoading, isError, data } = state
+  const [text, setText] = useState("")
 
   const handleSearch = (input) => {
-    setText(input);
-  };
+    setText(input)
+  }
 
   const onSubmit = (e) => {
-    e.preventDefault();
-    setQuery(text);
-    setUrl(URL2);
-    setText("");
-  };
+    e.preventDefault()
+    setQuery(text)
+    setUrl(API_URL2)
+    setText("")
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -45,8 +45,8 @@ const Search = ({ navigation }) => {
         />
       </View>
     </SafeAreaView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -62,6 +62,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-});
+})
 
-export default Search;
+export default Search

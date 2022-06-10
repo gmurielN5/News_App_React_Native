@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from "react";
-import { SafeAreaView, View, StatusBar, StyleSheet } from "react-native";
-import { AppContext } from "../Context";
-import { URL } from "@env";
+import React, { useContext, useEffect } from "react"
+import { SafeAreaView, View, StatusBar, StyleSheet } from "react-native"
+import { AppContext } from "../Context"
+import { API_URL } from "@env"
 
-import Categories from "../components/Categories";
-import List from "../components/List";
+import Categories from "../components/Categories"
+import List from "../components/List"
 
 const Follow = ({ navigation }) => {
   const categories = [
@@ -36,21 +36,21 @@ const Follow = ({ navigation }) => {
       id: "7",
       title: "technology",
     },
-  ];
-  const { state, query, setQuery, setUrl } = useContext(AppContext);
-  const { isLoading, isError, data } = state;
+  ]
+  const { state, query, setQuery, setUrl } = useContext(AppContext)
+  const { isLoading, isError, data } = state
 
   const handleQuery = (item) => {
-    setQuery(item);
-  };
+    setQuery(item)
+  }
 
   useEffect(() => {
     if (query) {
-      setUrl(`${URL}&category=`);
+      setUrl(`${API_URL}&category=`)
     } else {
-      setUrl(URL);
+      setUrl(API_URL)
     }
-  }, [query]);
+  }, [query])
 
   return (
     <SafeAreaView style={styles.container}>
@@ -70,8 +70,8 @@ const Follow = ({ navigation }) => {
         />
       </View>
     </SafeAreaView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -88,6 +88,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-});
+})
 
-export default Follow;
+export default Follow

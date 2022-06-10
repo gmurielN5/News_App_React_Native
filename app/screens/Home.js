@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { AppContext } from "../Context";
-import { Text, StyleSheet, SafeAreaView, View } from "react-native";
+import React, { useContext } from "react"
+import { AppContext } from "../Context"
+import { Text, StyleSheet, SafeAreaView, View } from "react-native"
 
-import List from "../components/List";
+import List from "../components/List"
 
 const Home = ({ navigation, route }) => {
-  const { state } = useContext(AppContext);
-  const { isLoading, isError, data } = state;
+  const { state } = useContext(AppContext)
+  const { isLoading, isError, data } = state
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -20,8 +20,8 @@ const Home = ({ navigation, route }) => {
         </Text>
       </View>
     </SafeAreaView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
   text: {
     color: "#8E8E93",
   },
-});
+})
 
-export default Home;
+export default Home
